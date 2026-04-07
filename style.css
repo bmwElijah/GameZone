@@ -38,15 +38,47 @@
 
 
 .Search-bar {
-    font-size: 28px;
-    margin: 1%;
-    background-color: #272727;
-    color: #ffffff;
-    float:right ;
-     margin: -27px 4px;
-     border: 3px solid black;
-     border-radius: 5%;
-    
+  position: absolute;
+  right: 19px;
+  margin-top: -144px;
+  font-size: 18px;
+  padding: 7px;
+  background-color: #3a3a3a;
+  color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 440px;
+}
+
+/* Resultat dropdown */
+.results {
+  position: absolute;
+  top: 44px; /* precis under navbar */
+  right: 31px;
+  background-color: #272727;
+  color: white;
+  border: 2px solid black;
+  border-top: none;
+  width: 420px;
+  max-height: 150px;
+  overflow-y: auto;
+  display: none;
+  border-radius: 0 0 10px 10px;
+  z-index: 100;
+}
+
+.results div {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.results div:hover {
+  background-color: #3a3a3a;
+}
+
+.results a {
+  color: white;
+  text-decoration: none;
 }
 
 
