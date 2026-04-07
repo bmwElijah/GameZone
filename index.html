@@ -16,7 +16,11 @@
       </a>
    </div>
 
-  <input class="Search-bar" type="text" placeholder="Search" list="input" id="input">
+
+  <div class="search-container">
+    <input class="Search-bar" type="text" placeholder="Search" id="input">
+    <div class="results" id="results"></div>
+  </div>
 
   <div id="menu-container">
     <ul class="main-menu">
@@ -30,13 +34,67 @@
   </div>
 </div>
 
-  
+
+</div>
 
 
 
 
 
-  
+
+
+
+
+
+
+
+
+ <script>
+  // Lista med exempel för Roblox
+  const items = [
+  {name: "Roblox ", link: "https://www.easyfun.gg/cloud-games/roblox.html?start=1"},
+  {name: "ragdoll-archers", link: "GameZone-ragdoll-archers.html"},
+  {name: "cookieclicker", link: "https://cookieclicker.com/"},
+  {name: "Space-Waves", link: "GameZone-Space-Waves.html"},
+
+    {name: "Minecraft ", link: "https://m.eaglercraft.com/mc/1.8.8/"},
+  {name: "Shell-shockers", link: "GameZone-Shell-shockers.html"},
+  {name: "Rodha", link: "GameZone-Rodha.html"},
+  {name: "rocketgoal", link: "GameZone-rocketgoal-io.html"},
+
+    {name: "farm-ring-idle ", link: "GameZone-farm-ring-idle.html"},
+  {name: "skillwarz", link: "GameZone-skillwarz.html"},
+  {name: "wave-dash-geometry-arrow", link: "GameZone-wave-dash-geometry-arrow.html"},
+  {name: "human-clicker-grow-organs", link: "GameZone-human-clicker-grow-organs.html"},
+
+    {name: "leek-factory-tycoon", link: "GameZone-leek-factory-tycoon.html"},
+  {name: "smash-karts", link: "GameZone-smash-karts.html"},
+  {name: "growmi", link: "GameZone-growmi.html"},
+  {name: "Link", link: "GameZone-Link.html"},
+  {name: "bloxorz", link: "GameZone-bloxorz.html"},
+  {name: "hazmob-fps", link: "GameZone-hazmob-fps-online-shooter.html"},
+  ];
+
+  const input = document.getElementById("input");
+  const resultsDiv = document.getElementById("results");
+
+  input.addEventListener("input", () => {
+  const query = input.value.toLowerCase();
+  resultsDiv.innerHTML = "";
+
+  if (query) {
+    const filtered = items.filter(item => item.name.toLowerCase().includes(query));
+    filtered.forEach(item => {
+      const div = document.createElement("div");
+      div.innerHTML = `<a href="${item.link}" target="_blank">${item.name}</a>`;
+      resultsDiv.appendChild(div);
+    });
+    resultsDiv.style.display = filtered.length ? "block" : "none";
+  } else {
+    resultsDiv.style.display = "none";
+  }
+  });
+  </script>
  
 
 
